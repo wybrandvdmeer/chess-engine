@@ -7,7 +7,10 @@
 
 class UciCommand {
 public:
-	UciCommandType uciType;
+	UciCommandType uciCommandType;
+	std::string arguments;
+	
+	UciCommand(UciCommandType uciCommandType, std::string arguments);
 };
 
 #endif

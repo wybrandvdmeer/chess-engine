@@ -23,16 +23,16 @@ int main(int argc, char ** argv) {
 	UciInterpreter uciInterpreter;
 	do {
 		UciCommand * command = uciInterpreter.read();
-		if(command->uciType == uci) {
+		if(command->uciCommandType == uci) {
 		}
 		
-		if(command->uciType == position) {
+		if(command->uciCommandType == position) {
 		}
 		
-		if(command->uciType == go) {
+		if(command->uciCommandType == go) {
 		}
 
-		if(command->uciType == isready) {
+		if(command->uciCommandType == isready) {
 		}
 	} while(true);
 	

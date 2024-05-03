@@ -5,6 +5,7 @@
 #include <algorithm>
 
 #include "UciInterpreter.h"
+#include "UciCommandType.h"
 #include "UciCommand.h"
 
 using namespace std;
@@ -20,8 +21,9 @@ UciCommand * UciInterpreter::read() {
 		ss >> firstWord;
 
 		if(std::find(uciCommands.begin(), uciCommands.end(), firstWord) == uciCommands.end()) {
-			cout << "Unknown command"; 
-		} else {
+			cout << "Unknown command\n"; 
+		} else if(firstWord == "uci") {
+			return new UciCommand(uci, line);	
 		}
 	}
 	return NULL;
